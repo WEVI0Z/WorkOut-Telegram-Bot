@@ -1,16 +1,9 @@
 import telebot
-from telebot import types
 from training_list import returnTheList as getTheTrainings
+from training_start import startTheTraining
+from markups import *
 
 bot = telebot.TeleBot('2059612773:AAEBRiv3A0kzY80SISgEXxTVVwbjWrG8CsU')
-
-def makeUpTheMarkups(*props):
-    markup = types.ReplyKeyboardMarkup()
-    for item in props:
-        markup.add(types.KeyboardButton(item))
-    
-    return markup
-
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
@@ -24,15 +17,13 @@ def trainingsMenuCaller(chat_id):
     @bot.message_handler(content_types=['text'])
     def mainMenuHandler(message):
         trainings = list(getTheTrainings().values())
+        targetTraining = []
 
         for i in trainings:
             if i["name"] == message.text:
-                markup = types.ReplyKeyboardRemove(selective=False)
-                bot.send_message(chat_id, "Тренировка найдена", reply_markup=markup)
-
-        # for name, value in getTheTrainings()[message.text].items():
-        #     print(name, value)
-        # except:
-        #     print("Except")
+                removeTheMarkups("Тренировка найдена", chat_id, bot)
+                targetTraining = i
+        
+        startTheTraining(targetTraining, bot, chat_id)
 
 bot.polling()
