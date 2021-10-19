@@ -8,4 +8,4 @@ def makeUpTheMarkups(*props):
     return markup
 
 def removeTheMarkups(text, chat_id, bot):
-    bot.send_message(chat_id, "Тренировка найдена", reply_markup=types.ReplyKeyboardRemove(selective=False))
+    bot.send_message(chat_id, text, reply_markup=types.ReplyKeyboardRemove(selective=False))

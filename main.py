@@ -23,7 +23,9 @@ def trainingsMenuCaller(chat_id):
             if i["name"] == message.text:
                 removeTheMarkups("Тренировка найдена", chat_id, bot)
                 targetTraining = i
+                
+                startTheTraining(targetTraining, bot, chat_id)
         
-        startTheTraining(targetTraining, bot, chat_id)
+        print("CHECKING___________________________________________________________________________")
 
 bot.polling()
