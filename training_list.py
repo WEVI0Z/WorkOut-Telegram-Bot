@@ -5,13 +5,13 @@ listOfTrainings = {
             {
                 "name" : "Отжимания",
                 "instruction" : "Примите позу для отжиманий и отжимайтесь",
-                "restTime" : 60,
+                "restTime" : 5,
                 "AmountOfTimes" : 3
             },
             {
                 "name" : "Приседания",
                 "instruction" : "Выполняйте приседания",
-                "restTime" : 60,
+                "restTime" : 5,
                 "AmountOfTimes" : 3
             }
         ]
@@ -34,29 +34,6 @@ listOfTrainings = {
         ]
     }
 }
-
-training = {
-    "name" : "Тренировка по умолчанию"
-}
-
-#Переписать все снищу
-def createTraining(name):
-    training = {
-        "name" : name,
-        "listOfExcersices" : []
-    }
-
-    training.append(createTheExersice())
-
-def createTheExersice(training, name, instruction, restTime = 60):
-    exersice = {
-        "name" : name,
-        "instruction" : instruction,
-        "restTime" : restTime
-    }
-
-    training["listOfExcersices"].append(exersice)
-
 
 def returnTheList():
     return listOfTrainings
