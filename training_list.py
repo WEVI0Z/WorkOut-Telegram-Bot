@@ -6,13 +6,19 @@ listOfTrainings = {
                 "name" : "Отжимания",
                 "instruction" : "Примите позу для отжиманий и отжимайтесь",
                 "restTime" : 5,
-                "AmountOfTimes" : 3
+                "type" : "rep"
             },
             {
-                "name" : "Приседания",
-                "instruction" : "Выполняйте приседания",
+                "name" : "Жим на горизонтальной скамье",
+                "instruction" : "Лягьте на спину и выполняйте жим",
                 "restTime" : 5,
-                "AmountOfTimes" : 3
+                "type" : "repw"
+            },
+            {
+                "name" : "Езда на тренажере",
+                "instruction" : "Крутите педали",
+                "restTime" : 5,
+                "type" : "card"
             }
         ]
     },
@@ -23,13 +29,13 @@ listOfTrainings = {
                 "name" : "Подтягивания",
                 "instruction" : "Возьмите и подтягивайтесь",
                 "restTime" : 60,
-                "AmountOfTimes" : 3
+                "type" : "rep"
             },
             {
                 "name" : "Прыжки в длинну",
                 "instruction" : "Выполняйте прыжки",
                 "restTime" : 60,
-                "AmountOfTimes" : 3
+                "type" : "rep"
             }
         ]
     }
