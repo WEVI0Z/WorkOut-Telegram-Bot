@@ -1,3 +1,4 @@
+import telebot
 from markups import *
 import time
 
@@ -28,6 +29,12 @@ def startTheTraining(training, bot, chat_id, message):
             anotherStepStart(message)
         
         def anotherStepStart(message):
+            restTime = excercise["restTime"]
+
+            bot.send_message(message.chat.id, "Перерыв, время для отдыха - " + str(restTime) + " секунд")
+
+            time.sleep(restTime)
+
             bot.send_message(message.chat.id, "Хотите ли сделать еще один подход этого же упражения", reply_markup=makeUpTheMarkups("Да", "Нет"))
         
             bot.register_next_step_handler(message, anotherRepeatExecution)
