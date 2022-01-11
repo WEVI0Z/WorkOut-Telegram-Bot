@@ -4,6 +4,7 @@ from training_execution import startTheTraining
 from markups import *
 
 bot = telebot.TeleBot('2059612773:AAEBRiv3A0kzY80SISgEXxTVVwbjWrG8CsU')
+bot.remove_webhook()
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
